@@ -22,7 +22,7 @@
     <div class="header">
         <div class="left">
             <img src="Icons/Erinium V2 1024 x 1024.png" width="32px" height="32px" alt="Logo">
-            <h1>Wiki Custom</h1>
+            <h1>Erinium Adventure</h1>
         </div>
         <div class="right">
             <div class="theme-toggle">
@@ -36,9 +36,10 @@
     <div class="page">
         <img onclick="openSidebar();" src="./Icons/menu.png" id="showside" class="showside" height="32px" width="
         32px">
-        <div id="sidebar" class="sidebar">
-            <img onclick="closeSidebar();" src="./Icons/menu.png" id="closeside" class="closeside" height="32px" width="
+        <img onclick="closeSidebar();" src="./Icons/menu.png" id="closeside" class="closeside" height="32px" width="
             32px">
+        <div id="sidebar" class="sidebar">
+            
             <br>
             <input type="text" id="search" placeholder="Rechercher...">
             <!-- Contenu de la barre latérale (groupes et pages) -->
@@ -92,6 +93,8 @@
                 }
             ?>
         </div>
+        <img onclick="copypath();" src="./Icons/path.png" id="copypathbtn" class="copypathbtn" height="32px" width="
+            32px">
         <div id="contentpage" class="content">
             <!-- Contenu de la page sélectionnée -->
         </div>
@@ -109,6 +112,7 @@
             const contenttheme = document.getElementById("contentpage");
             const search = document.getElementById("search");
             const separator = document.querySelectorAll(".separator");
+            const copypathbtn = document.getElementById("copypathbtn");
 
             function darktheme(){
                 body.classList.add("dark-theme");
@@ -133,6 +137,8 @@
                     element.classList.add("separatordark");
                     element.classList.remove("separatorwhite");
                 })
+                copypathbtn.classList.add("copypathdark-theme");
+                copypathbtn.classList.remove("copypathwhite-theme");
             }
 
             function whitetheme(){
@@ -158,6 +164,8 @@
                     element.classList.remove("separatordark");
                     element.classList.add("separatorwhite");
                 })
+                copypathbtn.classList.remove("copypathdark-theme");
+                copypathbtn.classList.add("copypathwhite-theme");
             }
 
             if (theme == "sombre") {
@@ -189,7 +197,6 @@
         });
 
 
-
         function loadDefaultHTMLFile() {
             const url = "./groupes/" + "acceuil.html"; // Spécifiez le chemin vers votre fichier HTML
 
@@ -201,6 +208,7 @@
                 const contentPage = document.getElementById("contentpage");
                 contentPage.innerHTML = htmlContent;
                 console.log(url);
+                setpath("acceuil");
             })
             .catch(error => {
                 console.error("Une erreur s'est produite : " + error);
@@ -213,5 +221,7 @@
     <script src="./script/filename.js"></script>
     <script src="./script/solofilename.js"></script>
     <script src="./script/search.js"></script>
+    <script src="./script/openpage.js"></script>
+    <script src="./script/pagepath.js"></script>
 </body>
 </html>

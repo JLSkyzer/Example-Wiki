@@ -34,6 +34,7 @@ filenameElements.forEach(element => {
                 const contentPage = document.getElementById("contentpage");
                 contentPage.innerHTML = htmlContent;
                 console.log(url);
+                setpath(groupname + "/" + fileName.replace(".html", ""));
             })
             .catch(error => {
                 console.error("Une erreur s'est produite : " + error);

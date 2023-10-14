@@ -7,17 +7,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function openSidebar(){
-    showside.style.display = "none";
-    closeside.style.display = "block";
-    sidebar.style.width = "auto";
     sidebar.style.display = "block"
+    sidebar.style.transform = "translateX(-" + sidebar.offsetWidth + "px)"
+    sidebar.style.transition = "all ease 0.25s";
+    sidebar.style.transform = "translateX(" + "0" + "px)"
+    closeside.style.display = "block";
+    showside.style.display = "none";
 }
 
 function closeSidebar(){
-    sidebar.style.animationName = "hideside";
+    sidebar.style.transition = "all ease 0.25s";
+    sidebar.style.transform = "translateX(-" + sidebar.offsetWidth + "px)"
     showside.style.display = "block";
     closeside.style.display = "none";
-    sidebar.style.width = "0";
     setTimeout(function () {
         sidebar.style.display = "none"
     }, 250);
