@@ -100,6 +100,8 @@
             function darktheme(){
                 body.classList.add("dark-theme");
                 body.classList.remove("light-theme");
+                contenttheme.classList.add("scrolldark");
+                contenttheme.classList.remove("scrollwhite")
                 sidetheme.classList.add("sidedark-theme");
                 sidetheme.classList.remove("sidelight-theme");
                 grpnametheme.forEach(element => {
@@ -117,6 +119,8 @@
             function whitetheme(){
                 body.classList.remove("dark-theme");
                 body.classList.add("light-theme");
+                contenttheme.classList.remove("scrolldark");
+                contenttheme.classList.add("scrollwhite");
                 sidetheme.classList.remove("sidedark-theme");
                 sidetheme.classList.add("sidelight-theme");
                 grpnametheme.forEach(element => {
