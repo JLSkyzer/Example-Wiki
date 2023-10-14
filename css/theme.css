@@ -97,3 +97,26 @@ input:checked + .slider:before {
     background-color: rgb(233, 233, 233);
     color: black;
 }
+
+.inputdark{
+    background-color: rgb(59, 59, 59);
+    border: 0px solid white;
+    border-bottom: rgb(36, 36, 36) 3px solid;
+    border-right: rgb(36, 36, 36) 3px solid;
+    border-top: rgb(88, 88, 88) 2px solid;
+    border-left: rgb(88, 88, 88) 2px solid;
+
+    -webkit-box-shadow: 5px 5px 10px 5px rgb(39, 39, 39); 
+    box-shadow: 3px 3px 10px 5px rgb(39, 39, 39);
+}
+.inputwhite{
+    background-color: rgb(189, 189, 189);
+    border: 0px solid white;
+    border-bottom: rgb(158, 158, 158) 3px solid;
+    border-right: rgb(158, 158, 158) 3px solid;
+    border-top: rgb(221, 221, 221) 2px solid;
+    border-left: rgb(221, 221, 221) 2px solid;
+
+    -webkit-box-shadow: 5px 5px 10px 5px rgb(179, 179, 179); 
+    box-shadow: 3px 3px 10px 5px rgb(179, 179, 179);
+}

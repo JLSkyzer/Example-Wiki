@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Wiki Custom</title>
+    <title>Erinium Adventure</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/theme.css">
+    <meta name="description" content="The best mod for survival enhancement"/>
+    <meta name="keywords" content="JLSkyzer, Erinium, EriniumAdventure, Erinium Adventure, mod minecraft, Minecraft, France, US">
+    <meta name="author" content="JLSkyzer" />
+    <meta name="copyright" content="propriétaire du copyright" />
+    <meta name="robots" content="index"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
 </head>
 <body>
         <?php
@@ -24,7 +31,6 @@
                     <span class="slider round"></span>
                 </label>
             </div>
-            <input type="text" id="search" placeholder="Rechercher...">
         </div>
     </div>
     <div class="page">
@@ -33,6 +39,8 @@
         <div id="sidebar" class="sidebar">
             <img onclick="closeSidebar();" src="./Icons/menu.png" id="closeside" class="closeside" height="32px" width="
             32px">
+            <br>
+            <input type="text" id="search" placeholder="Rechercher...">
             <!-- Contenu de la barre latérale (groupes et pages) -->
             <?php
                 $directoryPath = './groupes'; // Le chemin du répertoire des groupes
@@ -71,7 +79,7 @@
                             // Si la balise <title> a été trouvée, utilisez son contenu, sinon utilisez le nom du fichier
                             $title = !empty($matches[1]) ? $matches[1] : basename($file);
                             $fileName = basename($file);
-                            echo "<p class='filename $fileName'>$title</p>";
+                            echo "<p class='filename $fileName' data-filepath='$groupDir/$fileName'>$title</p>";
                         }
 
                         echo "</div>"; // Fermez la div du groupe
@@ -96,6 +104,7 @@
             const showside = document.getElementById("showside");
             const closeside = document.getElementById("closeside");
             const contenttheme = document.getElementById("contentpage");
+            const search = document.getElementById("search");
 
             function darktheme(){
                 body.classList.add("dark-theme");
@@ -114,6 +123,8 @@
                 closeside.classList.remove("sidebtnlight-theme");
                 contenttheme.classList.add("contentdark-theme");
                 contenttheme.classList.remove("contentlight-theme");
+                search.classList.add("inputdark");
+                search.classList.remove("inputwhite");
             }
 
             function whitetheme(){
@@ -133,6 +144,8 @@
                 closeside.classList.add("sidebtnlight-theme");
                 contenttheme.classList.remove("contentdark-theme");
                 contenttheme.classList.add("contentlight-theme");
+                search.classList.remove("inputdark");
+                search.classList.add("inputwhite");
             }
 
             if (theme == "sombre") {
@@ -187,5 +200,6 @@
     <script src="./script.js"></script>
     <script src="./script/filename.js"></script>
     <script src="./script/solofilename.js"></script>
+    <script src="./script/search.js"></script>
 </body>
 </html>
