@@ -108,7 +108,14 @@ input:checked + .slider:before {
 
     -webkit-box-shadow: 5px 5px 10px 5px rgb(39, 39, 39); 
     box-shadow: 3px 3px 10px 5px rgb(39, 39, 39);
+    color: white;
 }
+.inputdark::placeholder{
+    opacity: 1;
+    color: white;
+}
+
+
 .inputwhite{
     background-color: rgb(189, 189, 189);
     border: 0px solid white;
@@ -119,4 +126,15 @@ input:checked + .slider:before {
 
     -webkit-box-shadow: 5px 5px 10px 5px rgb(179, 179, 179); 
     box-shadow: 3px 3px 10px 5px rgb(179, 179, 179);
+}
+.inputwhite::placeholder{
+    opacity: 1;
+    color: black;
+}
+
+.separatordark{
+    background-color: rgb(83, 83, 83);
+}
+.separatorwhite{
+    background-color: rgb(161, 161, 161);
 }

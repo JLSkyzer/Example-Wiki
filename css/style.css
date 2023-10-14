@@ -22,6 +22,7 @@ body {
     height: 100%;
     max-width: 100%;
     width: 100%;
+    transition: all 0.25s ease-in-out !important;
     
 }
 .header {
@@ -79,18 +80,17 @@ body {
     z-index: 10;
     display: flex;
     flex-direction: column;
-    width: auto;
-    max-width: 50%;
     background-color: rgb(214, 214, 214);
-    height: 100%;
     box-sizing: border-box;
-    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     user-select: none;
-    transition: all 0.25s ease-in-out !important;
-    animation-duration: 0.25;
-    animation-name: hideside;
     overflow-y: auto;
     overflow-x: hidden;
+    height: 100%;
+    max-height: 100%;
+    width: auto;
+    max-width: 50%;
 }
 .sidebar div{
     position: relative;
@@ -114,6 +114,9 @@ body {
     color: rgb(66, 66, 66);
 }
 
+.group{
+}
+
 .filename{
     margin-left: 10px;
     font-size: 16px;
@@ -121,7 +124,7 @@ body {
     cursor: pointer;
 }
 .filename:hover{
-    color: blue;
+    color: rgb(85, 85, 223);
 }
 .filename img{
     height: 24px;
@@ -136,7 +139,7 @@ body {
     cursor: pointer;
 }
 .solofilename:hover{
-    color: blue;
+    color: rgb(85, 85, 223);
 }
 
 .content{
@@ -197,4 +200,12 @@ input[type=text]{
 }
 input[type=text]:focus{
     outline: 0px red solid;
+}
+
+.separator{
+    width: 90%;
+    height: 4px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }

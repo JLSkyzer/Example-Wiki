@@ -3,9 +3,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const groupnames = document.querySelectorAll('.groupname');
     const filenames = document.querySelectorAll('.filename');
     const contentpages = document.querySelectorAll('.contentpage');
+    const separatordisplay = document.querySelectorAll(".separator");
 
     searchInput.addEventListener("input", function() {
         const query = searchInput.value.toLowerCase();
+
+        if (query.length > 0){
+            separatordisplay.forEach(element => {
+                element.style.display = "none";
+            })
+        } else {
+            separatordisplay.forEach(element => {
+                element.style.display = "block";
+            })
+        }
 
         groupnames.forEach(groupname => {
             const groupName = groupname.textContent.toLowerCase();

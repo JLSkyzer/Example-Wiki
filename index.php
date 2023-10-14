@@ -60,6 +60,8 @@
                         $fileName = basename($file);
                         echo "<p class='solofilename $fileName'>$title</p>";
                     }
+
+                    echo "<div class='separator'></div>";
                     
                     // Parcourir les dossiers des groupes
                     foreach ($directories as $groupDir) {
@@ -83,6 +85,7 @@
                         }
 
                         echo "</div>"; // Fermez la div du groupe
+                        echo "<div class='separator'></div>";
                     }
                 } else {
                     echo "Le répertoire des groupes n'existe pas.";
@@ -105,6 +108,7 @@
             const closeside = document.getElementById("closeside");
             const contenttheme = document.getElementById("contentpage");
             const search = document.getElementById("search");
+            const separator = document.querySelectorAll(".separator");
 
             function darktheme(){
                 body.classList.add("dark-theme");
@@ -125,6 +129,10 @@
                 contenttheme.classList.remove("contentlight-theme");
                 search.classList.add("inputdark");
                 search.classList.remove("inputwhite");
+                separator.forEach(element => {
+                    element.classList.add("separatordark");
+                    element.classList.remove("separatorwhite");
+                })
             }
 
             function whitetheme(){
@@ -146,6 +154,10 @@
                 contenttheme.classList.add("contentlight-theme");
                 search.classList.remove("inputdark");
                 search.classList.add("inputwhite");
+                separator.forEach(element => {
+                    element.classList.remove("separatordark");
+                    element.classList.add("separatorwhite");
+                })
             }
 
             if (theme == "sombre") {
