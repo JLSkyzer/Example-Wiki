@@ -1,0 +1,150 @@
+/* Style général */
+html{
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #e4e4e4;
+    box-sizing: border-box;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+}
+.header .left {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+.header .right {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    gap: 10px;
+    margin-right: 5px;
+}
+/* Ajustez la marge entre l'image et le titre si nécessaire */
+.header .left img {
+    margin-right: 10px; /* Par exemple, pour ajouter de l'espace entre l'image et le titre */
+}
+.header .left h1 {
+    margin: 0; /* Pour supprimer la marge autour du titre */
+    font-size: 24px;
+}
+
+.page{
+    position: relative;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+@-webkit-keyframes hideside{
+    0%{
+        width: auto;
+        max-width: 50%;
+    }
+    100%{
+        width: 0;
+        max-width: 0;
+        display: none;
+    }
+}
+
+.sidebar{
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    max-width: 50%;
+    background-color: rgb(214, 214, 214);
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    user-select: none;
+    transition: width 1s ease-in-out !important;
+    animation-duration: 0.25;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.sidebar div{
+    position: relative;
+}
+.sidebar p{
+    line-height: 1;
+    word-wrap: break-word;
+}
+.showside{
+    position: absolute;
+    z-index: 50;
+}
+.showside, .closeside{
+    display: block;
+    cursor: pointer;
+}
+
+.groupname{
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(66, 66, 66);
+}
+
+.filename{
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.filename:hover{
+    color: blue;
+}
+
+.solofilename{
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.solofilename:hover{
+    color: blue;
+}
+
+.content{
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: rgb(233, 233, 233);
+    text-align: center;
+    line-height: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+/* voir les outlines */
+*{
+	/*box-shadow: 0 0 0 1px red inset;*/
+}
